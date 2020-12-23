@@ -3,8 +3,8 @@ on:
     - cron: '20 5 * * *'
 
 jobs:
-  slackPost:
-    name: Run tests with slackPost
+  slack:
+    name: Run tests with slack
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
