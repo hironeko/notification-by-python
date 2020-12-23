@@ -4,7 +4,7 @@ from os import getenv
 
 data = json.load(open('./data/anime/202001.json', 'r'))
 
-webhookUrl = getenv('SLACk_WEBHOOK_URL')
+webhookUrl = getenv('SLACK_WEBHOOK_URL')
 
 slack = slackweb.Slack(
     url=webhookUrl)
