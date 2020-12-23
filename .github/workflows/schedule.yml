@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '12 5 * * *'
+    - cron: '20 5 * * *'
 
 jobs:
   slackPost:
@@ -17,3 +17,5 @@ jobs:
           python-version: 3.8
       - name: post
         run: python read.py
+      - name: echo
+        run: echo test
