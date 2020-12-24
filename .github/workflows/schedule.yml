@@ -18,4 +18,4 @@ jobs:
       - name: pip install
         run: pip install -r requirements.txt
       - name: post
-        run: python read.py
+        run: python post.py
