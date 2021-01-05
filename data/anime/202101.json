@@ -10,5 +10,65 @@
     "publish_at": "23:30",
     "channel": "TOKYO MX",
     "day_of_week": "Wednesday"
+  },
+  {
+    "title": "俺だけが入れる隠しダンジョン",
+    "publish_at": "26:25",
+    "channel": "TBS",
+    "day_of_week": "Friday"
+  },
+  {
+    "title": "裏世界ピクニック",
+    "publish_at": "24:30",
+    "channel": "TOKYO MX",
+    "day_of_week": "Monday"
+  },
+  {
+    "title": "回復術士のやり直し",
+    "publish_at": "25:05",
+    "channel": "TOKYO MX",
+    "day_of_week": "Wednesday"
+  },
+  {
+    "title": "蜘蛛ですが、なにか？",
+    "publish_at": "22:30",
+    "channel": "TOKYO MX",
+    "day_of_week": "Friday"
+  },
+  {
+    "title": "怪物事変",
+    "publish_at": "22:00",
+    "channel": "TOKYO MX",
+    "day_of_week": "Sunday"
+  },
+  {
+    "title": "五等分の花嫁",
+    "publish_at": "25:28",
+    "channel": "TBS",
+    "day_of_week": "Thursday"
+  },
+  {
+    "title": "たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語",
+    "publish_at": "23:00",
+    "channel": "TOKYO MX",
+    "day_of_week": "Monday"
+  },
+  {
+    "title": "Dr.STONE",
+    "publish_at": "22:30",
+    "channel": "TOKYO MX",
+    "day_of_week": "Thursday"
+  },
+  {
+    "title": "無職転生〜異世界行ったら本気出す〜",
+    "publish_at": "24:00",
+    "channel": "TOKYO MX",
+    "day_of_week": "Sunday"
+  },
+  {
+    "title": "約束のネバーランド",
+    "publish_at": "26:10",
+    "channel": "フジテレビ",
+    "day_of_week": "Thursday"
   }
 ]
