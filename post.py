@@ -21,8 +21,6 @@ if data != []:
         if v['day_of_week'] == dayName:
             attachments = [
                 {
-                    "fallback": 'アニメの放送時間のご案内',
-                    "pretext": '本日放送のアニメ',
                     "fields": [
                         {
                             "title": 'タイトル',
@@ -41,6 +39,11 @@ if data != []:
                     ]
                 }
             ]
-            slack.notify(attachments=attachments)
+
+        attachments = [{
+            "fallback": 'アニメの放送時間のご案内',
+            "pretext": '本日放送のアニメ',
+        }]
+        slack.notify(attachments=attachments)
 else:
     slack.notify(text="放送予定のアニメがありません")
