@@ -16,31 +16,30 @@ data = json.load(open(f'./data/anime/{today.year}{month}.json', 'r'))
 
 slack = slackweb.Slack(url=getenv('SLACK_WEBHOOK_URL'))
 
+attachments = {
+    "fallback": 'アニメの放送時間のご案内',
+    "pretext": '本日放送のアニメ',
+}
+items = []
 if data != []:
     for v in data:
         if v['day_of_week'] == dayName:
-            attachments = [
-                {
-                    "fallback": 'アニメの放送時間のご案内',
-                    "pretext": '本日放送のアニメ',
-                    "fields": [
-                        {
-                            "title": 'タイトル',
-                            "value": v['title'],
-                        },
-                        {
-                            "title": '放送時間',
-                            "value": v['publish_at'],
-                            "short": "true"
-                        },
-                        {
-                            "title": 'チャンネル',
-                            "value": v['channel'],
-                            "short": "true"
-                        }
-                    ]
-                }
-            ]
-            slack.notify(attachments=attachments)
+            items.append({
+                "title": 'タイトル',
+                "value": v['title'],
+            })
+            items.append({
+                "title": '放送時間',
+                "value": v['publish_at'],
+                "short": "true"
+            })
+            items.append({
+                "title": 'チャンネル',
+                "value": v['channel'],
+                "short": "true"
+            })
+
+    attachments['fields'] = items
+    slack.notify(attachments=[attachments])
 else:
     slack.notify(text="放送予定のアニメがありません")
