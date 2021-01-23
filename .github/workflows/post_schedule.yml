@@ -1,6 +1,6 @@
-on: push 
-  # schedule:
-  #   - cron: '55 0 * * *'
+on:
+  schedule:
+    - cron: '55 0 * * *'
 
 jobs:
   slack:
