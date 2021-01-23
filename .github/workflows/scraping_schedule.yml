@@ -7,7 +7,7 @@ jobs:
     name: Run scraping
     runs-on: ubuntu-latest
     env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SCRAPING_TARGET_URL }}
+      SCRAPING_TARGET_URL: ${{ secrets.SCRAPING_TARGET_URL }}
       GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
     steps:
       - name: Checkout
