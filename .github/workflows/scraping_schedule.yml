@@ -1,0 +1,29 @@
+on: push
+  # schedule:
+    # - cron: '55 2 1 * *'
+
+jobs:
+  slack:
+    name: Run scraping
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SCRAPING_TARGET_URL }}
+      GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: pip install
+        run: pip install -r requirements.txt
+      - name: post
+        run: python scraping.py
+      - name: git push
+        run: |
+          git config --global user.email "hironeko"
+          git config --global user.name "GITHUB_EMAIL"
+          git add ./data
+          git commit -m "update anime list"
+          git push
