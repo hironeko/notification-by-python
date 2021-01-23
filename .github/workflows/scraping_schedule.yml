@@ -23,7 +23,7 @@ jobs:
       - name: git push
         run: |
           git config --global user.email "hironeko"
-          git config --global user.name "GITHUB_EMAIL"
+          git config --global user.name "${GITHUB_EMAIL}"
           git add ./data
           git commit -m "update anime list" | true
           git push
