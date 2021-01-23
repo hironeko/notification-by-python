@@ -1,6 +1,6 @@
-on: push
-  # schedule:
-    # - cron: '55 2 1 * *'
+on: 
+  schedule:
+    - cron: '55 2 1 * *'
 
 jobs:
   slack:
@@ -26,6 +26,3 @@ jobs:
           git add ./data
           git commit -m "update anime list" | true
           git push
-      - uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
