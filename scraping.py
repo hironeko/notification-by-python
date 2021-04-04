@@ -18,7 +18,9 @@ def writtenJson(jsonList, year, month):
 
 def makeJsonList(soup):
     jsonList = []
+    print(soup.find(class_='midashi_sort').text)
     for e in soup.find(class_='week_area').find_all('li'):
+        # print(e)
         week = u.convertDayOfWeek(
             e.find(class_="oatime").find(class_='youbi').text)
         e.find(class_="oatime").find(class_='youbi').decompose()

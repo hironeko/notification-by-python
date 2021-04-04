@@ -8,8 +8,9 @@ u = utils.UtilsClass()
 
 def getData(year, month):
     anime = json.load(open(f'./data/new_anime/{year}{month}.json', 'r'))
-    tmo = json.load(open(f'./data/tokyo_mx_only/{year}{month}.json', 'r'))
-    return anime + tmo
+    # tmo = json.load(open(f'./data/tokyo_mx_only/{year}{month}.json', 'r'))
+    # return anime + tmo
+    return anime
 
 
 def toSlack(data, dayName):

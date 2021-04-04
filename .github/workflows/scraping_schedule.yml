@@ -1,28 +1,28 @@
-on: 
-  schedule:
-    - cron: '15 0 1 * *'
+# on: 
+#   schedule:
+#     - cron: '15 0 1 * *'
 
-jobs:
-  slack:
-    name: Run scraping
-    runs-on: ubuntu-latest
-    env:
-      SCRAPING_TARGET_URL: ${{ secrets.SCRAPING_TARGET_URL }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-      - name: pip install
-        run: pip install -r requirements.txt
-      - name: post
-        run: python scraping.py
-      - name: git push
-        run: |
-          git config --local user.email "users.noreply.github.com"
-          git config --local user.name "hironeko"
-          git add ./data
-          git commit -m "update anime list" | true
-          git push
+# jobs:
+#   slack:
+#     name: Run scraping
+#     runs-on: ubuntu-latest
+#     env:
+#       SCRAPING_TARGET_URL: ${{ secrets.SCRAPING_TARGET_URL }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Set up Python 3.8
+#         uses: actions/setup-python@v1
+#         with:
+#           python-version: 3.8
+#       - name: pip install
+#         run: pip install -r requirements.txt
+#       - name: post
+#         run: python scraping.py
+#       - name: git push
+#         run: |
+#           git config --local user.email "users.noreply.github.com"
+#           git config --local user.name "hironeko"
+#           git add ./data
+#           git commit -m "update anime list" | true
+#           git push
